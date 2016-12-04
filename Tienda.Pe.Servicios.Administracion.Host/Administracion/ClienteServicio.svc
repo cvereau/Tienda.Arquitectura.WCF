@@ -1,0 +1,7 @@
+//===================================================================================
+// Template T4 for WCF Services
+//===================================================================================
+
+<%@ ServiceHost
+    Service="Tienda.Pe.Servicios.Administracion.Interfaces.IClienteServicio, Tienda.Pe.Servicios.Administracion.Interfaces"
+    Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>	

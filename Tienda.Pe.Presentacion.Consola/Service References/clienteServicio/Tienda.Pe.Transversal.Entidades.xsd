@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Tienda.Pe.Transversal.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Transversal.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="StatusResponseOfArrayOfClienteKIWOpqxC">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="StatusResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Transversal.Entidades" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCliente" Namespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfCliente" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" minOccurs="0" name="Lista" nillable="true" type="q2:ArrayOfArrayOfCliente" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusResponseOfArrayOfClienteKIWOpqxC" nillable="true" type="tns:StatusResponseOfArrayOfClienteKIWOpqxC" />
+  <xs:complexType name="StatusResponseOfClienteKIWOpqxC">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="StatusResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Transversal.Entidades" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Cliente" Namespace="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" minOccurs="0" name="Data" nillable="true" type="q4:Cliente" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Tienda.Pe.Servicios.Administracion.DataContracts" minOccurs="0" name="Lista" nillable="true" type="q5:ArrayOfCliente" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q6:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusResponseOfClienteKIWOpqxC" nillable="true" type="tns:StatusResponseOfClienteKIWOpqxC" />
+</xs:schema>

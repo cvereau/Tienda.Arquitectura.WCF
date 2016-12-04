@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E51ABAD-0662-4CB9-BCB8-DE8745B917F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tienda.Pe.Aplicacion.Seguridad</RootNamespace>
+    <AssemblyName>Tienda.Pe.Aplicacion.Seguridad</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioAplicacion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tienda.Pe.Aplicacion.ISeguridad\Tienda.Pe.Aplicacion.ISeguridad.csproj">
+      <Project>{dac6cd43-f6f8-4856-8e0e-85a9e7ec913f}</Project>
+      <Name>Tienda.Pe.Aplicacion.ISeguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Aplicacion.Seguridad.Entidades\Tienda.Pe.Aplicacion.Seguridad.Entidades.csproj">
+      <Project>{af2b51bd-318c-4e4b-baab-2120e14749ba}</Project>
+      <Name>Tienda.Pe.Aplicacion.Seguridad.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.Entidades\Tienda.Pe.Datos.Entidades.csproj">
+      <Project>{0b4a5e09-7d6b-4426-ab9b-2e6ac31a1a3c}</Project>
+      <Name>Tienda.Pe.Datos.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.IRepositorio\Tienda.Pe.Datos.IRepositorio.csproj">
+      <Project>{069B34E5-BC87-4EB7-B619-54C0E713EF2B}</Project>
+      <Name>Tienda.Pe.Datos.IRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.Modelo\Tienda.Pe.Datos.Modelo.csproj">
+      <Project>{26d7cf91-107b-4e55-ac37-124b663bed53}</Project>
+      <Name>Tienda.Pe.Datos.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Transversal.Entidades\Tienda.Pe.Transversal.Entidades.csproj">
+      <Project>{8930E22B-3624-4120-A780-6ACD62B3AC16}</Project>
+      <Name>Tienda.Pe.Transversal.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84559944-51AA-48EC-9302-5F748F2B1DB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tienda.Pe.Datos.Repositorio</RootNamespace>
+    <AssemblyName>Tienda.Pe.Datos.Repositorio</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoRepository.cs" />
+    <Compile Include="CategoriaRepository.cs" />
+    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="CompraRepository.cs" />
+    <Compile Include="CuentaRepository.cs" />
+    <Compile Include="EstadoRepository.cs" />
+    <Compile Include="Generico\Repository.cs" />
+    <Compile Include="MarcaRepository.cs" />
+    <Compile Include="CompraDetalleRepository.cs" />
+    <Compile Include="ProductoRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolAccesoRepository.cs" />
+    <Compile Include="RolRepository.cs" />
+    <Compile Include="SedeRepository.cs" />
+    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="VentaBitacoraRepository.cs" />
+    <Compile Include="VentaDetalleRepository.cs" />
+    <Compile Include="VentaPagoRepository.cs" />
+    <Compile Include="VentaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tienda.Pe.Datos.Entidades\Tienda.Pe.Datos.Entidades.csproj">
+      <Project>{0b4a5e09-7d6b-4426-ab9b-2e6ac31a1a3c}</Project>
+      <Name>Tienda.Pe.Datos.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.IRepositorio\Tienda.Pe.Datos.IRepositorio.csproj">
+      <Project>{069b34e5-bc87-4eb7-b619-54c0e713ef2b}</Project>
+      <Name>Tienda.Pe.Datos.IRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.IUnitOfWork\Tienda.Pe.Datos.IUnitOfWork.csproj">
+      <Project>{d0cb5517-d735-47e0-b7a7-0ed1702b212c}</Project>
+      <Name>Tienda.Pe.Datos.IUnitOfWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.Modelo\Tienda.Pe.Datos.Modelo.csproj">
+      <Project>{26d7cf91-107b-4e55-ac37-124b663bed53}</Project>
+      <Name>Tienda.Pe.Datos.Modelo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.UnitOfWork\Tienda.Pe.Datos.UnitOfWork.csproj">
+      <Project>{42dde6b2-e5bb-4e69-adcc-634c823c2b42}</Project>
+      <Name>Tienda.Pe.Datos.UnitOfWork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

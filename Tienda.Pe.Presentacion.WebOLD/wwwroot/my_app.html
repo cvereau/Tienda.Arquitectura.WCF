@@ -1,0 +1,21 @@
+﻿<div class="mdl-grid">
+    <button class="mdl-button mdl-js-button mdl-button--raised" (click)="onLigaDesliga()"> Liga/Desliga</button>
+
+    <div ngIf="onOff">
+        Ligado
+    </div>
+    <div ngIf="!onOff">
+        Desligado
+    </div>
+
+    <ul>
+        <li *ngFor="#pe of pessoas">
+            {{pe.nome}} <b>{{pe.idade}}</b>
+        </li>
+    </ul>
+
+    <input [(ngModel)]="pessoa.nome" />
+    <input [(ngModel)]="pessoa.idade" />
+
+    <button class="mdl-button mdl-js-button mdl-button--raised" (click)="onIncluir()"> Incluir</button>
+</div>

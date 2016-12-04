@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="da5e8fc1-74ab-42cc-8b42-bf89a46268cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:35734/Administracion/ClienteServicio.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="c42c174e-f736-4b7f-94db-da80291d3f80" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4851d42c-786a-4cb1-a33a-cf948dac1cc9" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="18cbc1fa-7fc7-435e-8533-6c9057cadb5e" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+    <MetadataFile FileName="Tienda.Pe.Transversal.Entidades.xsd" MetadataType="Schema" ID="fd89aa8d-a9c0-4efa-97e0-58fc16aa6deb" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+    <MetadataFile FileName="Tienda.Pe.Servicios.Administracion.DataContracts.xsd" MetadataType="Schema" ID="4692984f-77c1-4e59-a70c-a2f3db4c74de" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="7a1e22e8-711b-448a-850a-69a08c7f2703" SourceId="1" SourceUrl="http://localhost:35734/Administracion/ClienteServicio.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
