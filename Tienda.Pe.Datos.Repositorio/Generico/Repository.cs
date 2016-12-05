@@ -68,9 +68,10 @@ namespace Tienda.Pe.Datos.Repositorio.Generico
             this.unitOfWork.Context.Set<T>().Remove(item);
         }
 
-        public virtual void EliminarLogico(T item)
-        {            
-            this.unitOfWork.Context.Entry(item).State = EntityState.Deleted;
+        public virtual void EliminarLogico(int item)
+        {
+            var entidad = Obtener(item);
+            this.unitOfWork.Context.Entry(entidad).State = EntityState.Deleted;
         }
     }
 }

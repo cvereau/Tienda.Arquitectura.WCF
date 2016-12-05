@@ -3,36 +3,34 @@ using Tienda.Pe.Datos.Entidades;
 using Tienda.Pe.Datos.IRepositorio;
 using Tienda.Pe.Datos.Modelo.Context;
 using Tienda.Pe.Datos.Repositorio.Generico;
+using Tienda.Pe.Datos.UoW;
 
 namespace Tienda.Pe.Datos.Repositorio
 {
     public class VentaBitacoraRepository : Repository<VentaBitacora>, IVentaBitacoraRepository
     {
-        private readonly TiendaContext _dbContext;
-
-        public VentaBitacoraRepository(TiendaContext dbContext) : base(dbContext)
+        readonly IUnitOfWork unitOfWork;
+        public VentaBitacoraRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _dbContext = dbContext;
+            this.unitOfWork = unitOfWork;
         }
-
         public override VentaBitacora Insertar(VentaBitacora entidad)
         {
             entidad.Activo = true;
-            var entidadNueva = _dbContext.Set<VentaBitacora>().Add(entidad);
+            var entidadNueva = base.Insertar(entidad);
+            this.unitOfWork.Commit();
             return entidadNueva;
         }
-
         public override void Actualizar(VentaBitacora entidad)
         {
             entidad.Activo = true;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.Actualizar(entidad);
+            this.unitOfWork.Commit();
         }
-
         public override void EliminarLogico(int id)
         {
-            var entidad = _dbContext.Set<VentaBitacora>().Find(id);
-            entidad.Activo = false;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.EliminarLogico(id);
+            this.unitOfWork.Commit();
         }
     }
 }

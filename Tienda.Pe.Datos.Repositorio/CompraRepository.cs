@@ -3,36 +3,34 @@ using Tienda.Pe.Datos.Entidades;
 using Tienda.Pe.Datos.IRepositorio;
 using Tienda.Pe.Datos.Modelo.Context;
 using Tienda.Pe.Datos.Repositorio.Generico;
+using Tienda.Pe.Datos.UoW;
 
 namespace Tienda.Pe.Datos.Repositorio
 {
     public class CompraRepository : Repository<Compra>, ICompraRepository
     {
-        private readonly TiendaContext _dbContext;
-
-        public CompraRepository(TiendaContext dbContext) : base(dbContext)
+        readonly IUnitOfWork unitOfWork;
+        public CompraRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _dbContext = dbContext;
+            this.unitOfWork = unitOfWork;
         }
-
         public override Compra Insertar(Compra entidad)
         {
             entidad.Activo = true;
-            var entidadNueva = _dbContext.Set<Compra>().Add(entidad);
+            var entidadNueva = base.Insertar(entidad);
+            this.unitOfWork.Commit();
             return entidadNueva;
         }
-
         public override void Actualizar(Compra entidad)
         {
             entidad.Activo = true;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.Actualizar(entidad);
+            this.unitOfWork.Commit();
         }
-
         public override void EliminarLogico(int id)
         {
-            var entidad = _dbContext.Set<Compra>().Find(id);
-            entidad.Activo = false;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.EliminarLogico(id);
+            this.unitOfWork.Commit();
         }
     }
 }

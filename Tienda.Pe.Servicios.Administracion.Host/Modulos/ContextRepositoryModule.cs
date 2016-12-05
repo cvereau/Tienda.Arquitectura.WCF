@@ -5,6 +5,8 @@ using Tienda.Pe.Datos.IRepositorio.Generico;
 using Tienda.Pe.Datos.Modelo.Context;
 using Tienda.Pe.Datos.Modelo;
 using Tienda.Pe.Datos.Repositorio.Generico;
+using Tienda.Pe.Datos.UoW;
+using Tienda.Pe.Datos.UoW.Implementation;
 
 namespace Tienda.Pe.Servicios.Administracion.Host.Modulos
 {
@@ -13,7 +15,9 @@ namespace Tienda.Pe.Servicios.Administracion.Host.Modulos
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<TiendaContext>().As<TiendaContext>();
-            //builder.RegisterType<UnitOfWork>().As<UnitOfWork>();
+
+            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
+
             builder.RegisterAssemblyTypes(Assembly.Load("Tienda.Pe.Datos.Repositorio"))
                 .Where(type => type.Name.EndsWith("Repository", StringComparison.Ordinal))
                 .AsImplementedInterfaces()

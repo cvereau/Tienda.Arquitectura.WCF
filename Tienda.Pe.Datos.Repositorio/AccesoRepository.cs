@@ -3,36 +3,34 @@ using Tienda.Pe.Datos.Entidades;
 using Tienda.Pe.Datos.IRepositorio;
 using Tienda.Pe.Datos.Modelo.Context;
 using Tienda.Pe.Datos.Repositorio.Generico;
+using Tienda.Pe.Datos.UoW;
 
 namespace Tienda.Pe.Datos.Repositorio
 {
     public class AccesoRepository : Repository<Acceso>, IAccesoRepository
     {
-        private readonly TiendaContext _dbContext;
-
-        public AccesoRepository(TiendaContext dbContext) : base(dbContext)
+        readonly IUnitOfWork unitOfWork;
+        public AccesoRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _dbContext = dbContext;
+            this.unitOfWork = unitOfWork;
         }
-
         public override Acceso Insertar(Acceso entidad)
         {
             entidad.Activo = true;
-            var entidadNueva = _dbContext.Set<Acceso>().Add(entidad);
+            var entidadNueva = base.Insertar(entidad);
+            this.unitOfWork.Commit();
             return entidadNueva;
         }
-
         public override void Actualizar(Acceso entidad)
         {
             entidad.Activo = true;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.Actualizar(entidad);
+            this.unitOfWork.Commit();
         }
-
         public override void EliminarLogico(int id)
         {
-            var entidad = _dbContext.Set<Acceso>().Find(id);
-            entidad.Activo = false;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.EliminarLogico(id);
+            this.unitOfWork.Commit();
         }
     }
 }

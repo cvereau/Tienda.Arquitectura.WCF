@@ -3,32 +3,34 @@ using Tienda.Pe.Datos.Entidades;
 using Tienda.Pe.Datos.IRepositorio;
 using Tienda.Pe.Datos.Modelo.Context;
 using Tienda.Pe.Datos.Repositorio.Generico;
+using Tienda.Pe.Datos.UoW;
 
 namespace Tienda.Pe.Datos.Repositorio
 {
     public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
-        private readonly TiendaContext _dbContext;
-        public ClienteRepository(TiendaContext dbContext) : base(dbContext)
+        readonly IUnitOfWork unitOfWork;
+        public ClienteRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            _dbContext = dbContext;
+            this.unitOfWork = unitOfWork;
         }
         public override Cliente Insertar(Cliente entidad)
         {
             entidad.Activo = true;
-            var entidadNueva = _dbContext.Set<Cliente>().Add(entidad);
+            var entidadNueva = base.Insertar(entidad);
+            this.unitOfWork.Commit();
             return entidadNueva;
         }
         public override void Actualizar(Cliente entidad)
         {
             entidad.Activo = true;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.Actualizar(entidad);
+            this.unitOfWork.Commit();
         }
         public override void EliminarLogico(int id)
         {
-            var entidad = _dbContext.Set <Cliente>().Find(id);
-            entidad.Activo = false;
-            this._dbContext.Entry(entidad).State = EntityState.Modified;
+            base.EliminarLogico(id);
+            this.unitOfWork.Commit();
         }
     }
 }

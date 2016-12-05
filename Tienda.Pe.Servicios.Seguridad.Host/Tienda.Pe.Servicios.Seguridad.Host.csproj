@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tienda.Pe.Servicios.Seguridad.Host</RootNamespace>
     <AssemblyName>Tienda.Pe.Servicios.Seguridad.Host</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <UseIISExpress>true</UseIISExpress>
@@ -156,6 +156,10 @@
       <Project>{069B34E5-BC87-4EB7-B619-54C0E713EF2B}</Project>
       <Name>Tienda.Pe.Datos.IRepositorio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.IUnitOfWork\Tienda.Pe.Datos.IUnitOfWork.csproj">
+      <Project>{d0cb5517-d735-47e0-b7a7-0ed1702b212c}</Project>
+      <Name>Tienda.Pe.Datos.IUnitOfWork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tienda.Pe.Datos.Modelo\Tienda.Pe.Datos.Modelo.csproj">
       <Project>{26D7CF91-107B-4E55-AC37-124B663BED53}</Project>
       <Name>Tienda.Pe.Datos.Modelo</Name>
@@ -163,6 +167,10 @@
     <ProjectReference Include="..\Tienda.Pe.Datos.Repositorio\Tienda.Pe.Datos.Repositorio.csproj">
       <Project>{84559944-51AA-48EC-9302-5F748F2B1DB3}</Project>
       <Name>Tienda.Pe.Datos.Repositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tienda.Pe.Datos.UnitOfWork\Tienda.Pe.Datos.UnitOfWork.csproj">
+      <Project>{42dde6b2-e5bb-4e69-adcc-634c823c2b42}</Project>
+      <Name>Tienda.Pe.Datos.UnitOfWork</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tienda.Pe.Servicios.Seguridad.DataContracts\Tienda.Pe.Servicios.Seguridad.DataContracts.csproj">
       <Project>{d9821958-a4b4-4932-b42a-e2c6e1df0489}</Project>

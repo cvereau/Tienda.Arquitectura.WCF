@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tienda.Pe.Datos.Modelo</RootNamespace>
     <AssemblyName>Tienda.Pe.Datos.Modelo</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -62,7 +62,6 @@
     <Compile Include="Context\TiendaContext.cs" />
     <Compile Include="Mapping\TiendaMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tienda.Pe.Datos.Entidades\Tienda.Pe.Datos.Entidades.csproj">

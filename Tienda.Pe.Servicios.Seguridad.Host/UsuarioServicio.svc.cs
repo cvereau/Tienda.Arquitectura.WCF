@@ -21,16 +21,16 @@ namespace Tienda.Pe.Servicios.Seguridad.Host
         }
         public StatusResponse<DAC.Usuario> Adicionar(DAC.Usuario usuario)
         {
-            Mapper.CreateMap<DAC.Usuario, APE.Usuario>();
-            Mapper.CreateMap<APE.Usuario, DAC.Usuario>();
+            //Mapper.CreateMap<DAC.Usuario, APE.Usuario>();
+            //Mapper.CreateMap<APE.Usuario, DAC.Usuario>();
 
-            var entidadMap = Mapper.Map<APE.Usuario>(usuario);
-            var resultado = this.usuarioAplicacion.Adicionar(entidadMap);
+            //var entidadMap = Mapper.Map<APE.Usuario>(usuario);
+            //var resultado = this.usuarioAplicacion.Adicionar(entidadMap);
 
-            Mapper.CreateMap<StatusResponse<APE.Usuario>, StatusResponse<DAC.Usuario>>();
-            var response = Mapper.Map<StatusResponse<DAC.Usuario>>(resultado);
+            //Mapper.CreateMap<StatusResponse<APE.Usuario>, StatusResponse<DAC.Usuario>>();
+            //var response = Mapper.Map<StatusResponse<DAC.Usuario>>(resultado);
 
-            return response;
+            return null;//response;
         }
     }
 }

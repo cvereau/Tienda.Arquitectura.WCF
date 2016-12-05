@@ -13,6 +13,6 @@ namespace Tienda.Pe.Datos.IRepositorio.Generico
         void InsertarRange(IEnumerable<T> items);
         void Actualizar(T item);
         void Eliminar(T item);
-        void EliminarLogico(T item);
+        void EliminarLogico(int item);
     }
 }
